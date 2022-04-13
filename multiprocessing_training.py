@@ -32,9 +32,9 @@ def compute_model_with_random_features(i):
     cv_score = cross_val_score(lr, X[features_to_use], y, cv=5)
     mean_score = round(100 * np.mean(cv_score), 1)
     std_score = round(100 * np.std(cv_score), 1)
-    app_log.warning(f'{mean_score}|{std_score}|{cv_score}')
+    app_log.warning(f'{mean_score}|{std_score}|{cv_score}|{features_to_use}')
 
 
 if __name__ == '__main__':
     with Pool() as p:
-        list(tqdm(p.imap(compute_model_with_random_features, range(100), chunksize=10), total=100))
+        list(tqdm(p.imap(compute_model_with_random_features, range(3_000_000), chunksize=10), total=100))
