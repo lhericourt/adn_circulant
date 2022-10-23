@@ -18,3 +18,11 @@ This script takes 3 arguments (they all have default values), and you can find i
 ```
 python data_processing/compute_features.py --help
 ```
+
+# Run multiprocessor training
+You can run the training of many random models by using the script multiprocessing_training.py.
+This script has parameters that you can find about using the command :
+```
+python multiprocessing_training.py --help
+```
+It will log all the results in a file name adn_circulant_brute_force_fold_*i*.log, where i corresponds to the fold the training is done on.
